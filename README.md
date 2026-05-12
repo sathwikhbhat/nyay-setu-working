@@ -60,7 +60,9 @@ cp .env.example .env
 # (Required: GROQ_API_KEY, JWT_SECRET)
 
 # 3. Spin up the entire system
-docker-compose up --build
+docker compose up --build
+# If your environment uses the legacy Docker Compose binary, use:
+# docker-compose up --build
 ```
 
 The system will be available at:
