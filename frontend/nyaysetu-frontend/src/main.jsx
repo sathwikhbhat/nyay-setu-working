@@ -67,6 +67,25 @@ const Root = () => {
         registerServiceWorker(setSwRegistration);
     }, []);
 
+    useEffect(() => {
+        if (import.meta.env.DEV) {
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+
+            if (!token || !user) {
+                const devUser = {
+                    id: 1,
+                    name: 'Dev User',
+                    role: 'LITIGANT',
+                };
+
+                localStorage.setItem('token', 'dev-token');
+                localStorage.setItem('user', JSON.stringify(devUser));
+                console.log('🔧 DEV auth bypass enabled for local QA: litigant user seeded');
+            }
+        }
+    }, []);
+
     return (
         <StrictMode>
             {/* 4. The Session Banner renders here when showWarning is true */}
