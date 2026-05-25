@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 
 @Tag(name = "Authentication", description = "Register, login, password reset and face login")
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
 @Slf4j
 public class AuthController {

@@ -34,9 +34,9 @@ import java.util.concurrent.ConcurrentHashMap;
  * - 5 requests per minute per IP
  *
  * Protected endpoints:
- * - /api/auth/login
- * - /api/auth/register
- * - /api/auth/forgot-password
+ * - /api/v1/auth/login
+ * - /api/v1/auth/register
+ * - /api/v1/auth/forgot-password
  */
 @Component
 @Slf4j
@@ -190,7 +190,7 @@ public class RateLimitFilter extends OncePerRequestFilter {
      */
     private boolean isRateLimitedEndpoint(String path) {
 
-        return path.matches("^/api/auth/(login|register|forgot-password)$");
+        return path.matches("^/api/v1/auth/(login|register|forgot-password)$");
     }
 
     /**
