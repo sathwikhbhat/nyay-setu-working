@@ -1,22 +1,3 @@
-const cors = require("cors");
-const express = require("express");
-
-const app = express();
-
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "http://192.168.26.39:5173"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
-
-app.options("*", cors());
-
-app.use(express.json());
-
 const { Server } = require('socket.io');
 
 // Create Socket.IO server on port 3001

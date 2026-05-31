@@ -15,11 +15,8 @@ export default function ForgotPasswordModal({ isOpen, onClose }) {
         setError('');
         setLoading(true);
 
-        console.log("API_BASE_URL:", API_BASE_URL);
-        console.log("Request URL:", `${API_BASE_URL}/api/auth/forgot-password`);
-
         try {
-            const response = await fetch(`${API_BASE_URL}/api/auth/forgot-password`, {
+            const response = await fetch(`${API_BASE_URL}/api/v1/auth/forgot-password`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
