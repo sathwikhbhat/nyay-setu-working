@@ -132,6 +132,13 @@ try:
     logger.info("Loaded modi_ocr router.")
 except ImportError:
     logger.warning("Skipping modi_ocr router due to missing dependencies.")
+try:
+    from routers.ocr import router as ocr_router
+    app.include_router(ocr_router)
+    logger.info("Loaded ocr router.")
+except ImportError:
+    logger.warning("Skipping ocr router due to missing dependencies.")
+
 
 
 # ─── Models ───────────────────────────────────────────────────────────────────
